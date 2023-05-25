@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: frontend-quality-dashboard-jd4l
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: frontend-quality-dashboard-jd4l
+    app.kubernetes.io/part-of: mc-quality-dashboard
+  name: frontend-quality-dashboard-jd4l
+spec:
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: frontend-quality-dashboard-jd4l
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: frontend-quality-dashboard-jd4l
+    spec:
+      containers:
+      - image: image
+        imagePullPolicy: Always
+        name: container-image
+        ports:
+        - containerPort: 8081
+        resources: {}
+status: {}
