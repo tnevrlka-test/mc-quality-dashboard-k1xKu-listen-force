@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: backend-quality-dashboard-lxac
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: backend-quality-dashboard-lxac
+    app.kubernetes.io/part-of: mc-quality-dashboard
+  name: backend-quality-dashboard-lxac
+spec:
+  ports:
+  - port: 8081
+    targetPort: 8081
+  selector:
+    app.kubernetes.io/instance: backend-quality-dashboard-lxac
+status:
+  loadBalancer: {}
